@@ -1,14 +1,14 @@
 package org.skypro.skyshop.model.search;
 
+import java.util.UUID;
+
 public interface Searchable {
 
     String getSearchTerm();
 
     String getContentType();
 
-    default String getID() {
-        return "UUID(java.util.UUID)";
-    }
+    UUID getID();
 
 
     default String getStringRepresentation() {

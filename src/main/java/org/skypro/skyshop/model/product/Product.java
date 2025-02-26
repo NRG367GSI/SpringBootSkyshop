@@ -4,11 +4,14 @@ package org.skypro.skyshop.model.product;
 import org.skypro.skyshop.model.search.Searchable;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public abstract class Product implements Searchable {
     protected final String productName;
+    private final UUID id;
 
-    public Product(String productName) {
+    public Product(String productName, UUID id) {
+        this.id = id;
         if (productName == null) {
             throw new IllegalArgumentException("Название продукта не может быть пустым. Вы ввели: ");
         }
@@ -36,6 +39,11 @@ public abstract class Product implements Searchable {
     @Override
     public String getContentType() {
         return "PRODUCT";
+    }
+
+    @Override
+    public UUID getID() {
+        return id;
     }
 
     @Override
