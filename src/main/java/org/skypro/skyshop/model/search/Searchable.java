@@ -1,4 +1,4 @@
-package org.skypro.skyshop.content;
+package org.skypro.skyshop.model.search;
 
 public interface Searchable {
 
@@ -6,7 +6,9 @@ public interface Searchable {
 
     String getContentType();
 
-    //String getTitle();
+    default String getID() {
+        return "UUID(java.util.UUID)";
+    }
 
 
     default String getStringRepresentation() {

@@ -1,4 +1,4 @@
-package org.skypro.skyshop.product;
+package org.skypro.skyshop.model.product;
 
 public class SimpleProduct extends Product{
     private final int priceProduct;

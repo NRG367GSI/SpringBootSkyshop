@@ -1,8 +1,10 @@
-package org.skypro.skyshop.content;
+package org.skypro.skyshop.model.article;
+
+import org.skypro.skyshop.model.search.Searchable;
 
 import java.util.Objects;
 
-public final class Article implements Searchable{
+public final class Article implements Searchable {
     private final String title;
     private final String content;
 

@@ -1,4 +1,6 @@
-package org.skypro.skyshop.content;
+package org.skypro.skyshop.model.search;
+
+import org.skypro.skyshop.model.article.ArtycleComparator;
 
 import java.util.*;
 import java.util.stream.Collectors;

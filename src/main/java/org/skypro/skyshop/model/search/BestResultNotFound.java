@@ -1,4 +1,4 @@
-package org.skypro.skyshop.content;
+package org.skypro.skyshop.model.search;
 
 public class BestResultNotFound extends Exception{
     public BestResultNotFound(String searchQuery) {
