@@ -47,6 +47,7 @@ public class StorageService {
         product.put(yogurt.getID(), yogurt);
         product.put(tomato.getID(), tomato);
         product.put(potato.getID(), potato);
+        System.out.println(product);
 
         // Создаем статьи с описаниями товаров
         Article article1 = new Article(

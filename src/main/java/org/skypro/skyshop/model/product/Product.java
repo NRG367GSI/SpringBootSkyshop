@@ -1,6 +1,7 @@
 package org.skypro.skyshop.model.product;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.skypro.skyshop.model.search.Searchable;
 
 import java.util.Objects;
@@ -31,11 +32,13 @@ public abstract class Product implements Searchable {
     //Специальный товар — это товар со скидкой или фиксированной стоимостью
     public abstract boolean isSpecial();
 
+    @JsonIgnore
     @Override
     public String getSearchTerm() {
         return productName;
     }
 
+    @JsonIgnore
     @Override
     public String getContentType() {
         return "PRODUCT";
