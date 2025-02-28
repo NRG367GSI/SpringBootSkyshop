@@ -5,8 +5,8 @@ import java.util.UUID;
 public class SimpleProduct extends Product{
     private final int priceProduct;
 
-    public SimpleProduct(String productName, int priceProduct, UUID id) {
-        super(productName, id);
+    public SimpleProduct(UUID id, String productName, int priceProduct) {
+        super(id, productName);
         if (priceProduct <= 0) {
             throw new IllegalArgumentException("Цена продукта должна быть строго больше 0. Получено: " + priceProduct);
         }

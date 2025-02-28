@@ -10,7 +10,7 @@ public abstract class Product implements Searchable {
     protected final String productName;
     private final UUID id;
 
-    public Product(String productName, UUID id) {
+    public Product(UUID id, String productName) {
         this.id = id;
         if (productName == null) {
             throw new IllegalArgumentException("Название продукта не может быть пустым. Вы ввели: ");

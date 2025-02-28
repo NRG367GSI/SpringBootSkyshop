@@ -10,7 +10,7 @@ public final class Article implements Searchable {
     private final String content;
     private final UUID id;
 
-    public Article(String title, String text, UUID id) {
+    public Article(UUID id, String title, String text) {
         this.title = title;
         this.content = text;
         this.id = id;
