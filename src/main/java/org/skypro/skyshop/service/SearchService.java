@@ -15,7 +15,6 @@ public class SearchService {
 
     private final StorageService storageService;
 
-    // Внедрение StorageService через конструктор
     public SearchService(StorageService storageService) {
         this.storageService = storageService;
     }
@@ -28,7 +27,6 @@ public class SearchService {
         return storageService.getAllArticle();
     }
 
-    // Метод для объединения продуктов и статей в одну коллекцию
     public List<Searchable> combiningCollections() {
         List<Searchable> allSearchable = new ArrayList<>();
         allSearchable.addAll(storageService.getAllProduct().values()); // Добавляем все продукты
@@ -36,7 +34,6 @@ public class SearchService {
         return allSearchable;
     }
 
-    // Метод для поиска по запросу
     public List<Searchable> search(String request) {
         List<Searchable> result = combiningCollections().stream().filter(
                 searchable -> searchable.getSearchTerm().toLowerCase().contains(request.toLowerCase())).collect(Collectors.toList());

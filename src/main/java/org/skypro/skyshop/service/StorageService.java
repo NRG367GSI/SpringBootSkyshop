@@ -86,7 +86,6 @@ public class StorageService {
         this.article.put(article3.getID(), article3);
         this.article.put(article4.getID(), article4);
         this.article.put(article5.getID(), article5);
-
     }
 }
 
