@@ -15,7 +15,7 @@ public class ProductBasket {
     private final Map<UUID, Integer> basket;
 
     public ProductBasket() {
-        this.basket = new HashMap<UUID, Integer>();
+        this.basket = new HashMap<>();
     }
 
     public void addProduct(UUID id) {
@@ -23,8 +23,7 @@ public class ProductBasket {
     }
 
     public Map<UUID, Integer> getAllProduct() {
-        Map<UUID, Integer> unmodifiableMap = Collections.unmodifiableMap(basket);
-        return unmodifiableMap;
+        return Collections.unmodifiableMap(basket);
     }
 
 }
