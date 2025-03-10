@@ -7,11 +7,6 @@ public final class UserBasket {
     private final List<BasketItem> basketItems;
     private final int total;
 
-
-    // у нас есть ProductBasket хронящий Map<id, countProduct>
-    // BasketItem хронящий Product и колличество продукта count
-    // сам продукт имеет в себе цену
-    // нам нужно что б конструктор получал список
     public UserBasket(List<BasketItem> basketItems) {
         this.basketItems = basketItems;
         total = basketItems.stream().
