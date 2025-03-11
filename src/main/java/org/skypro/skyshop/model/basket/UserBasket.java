@@ -1,6 +1,5 @@
 package org.skypro.skyshop.model.basket;
 
-import java.util.LinkedList;
 import java.util.List;
 
 public final class UserBasket {
