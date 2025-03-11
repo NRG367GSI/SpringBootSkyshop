@@ -44,13 +44,13 @@ public class ShopController {
         return searchService.search(pattern);
     }
 
-    @GetMapping("/basket/{id}")
+    @GetMapping("/shop/basket/{id}")
     public String addProduct(@PathVariable("id") UUID id) {
         this.basketService.addProductToBasket(id);
         return "Продукт успешно добавлен";
     }
 
-    @GetMapping("/basket")
+    @GetMapping("/shop/basket")
     public List<BasketItem> getUserBasket() {
         return basketService.getUserBasket();
     }
