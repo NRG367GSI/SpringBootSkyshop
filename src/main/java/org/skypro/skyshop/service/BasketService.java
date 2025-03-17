@@ -21,20 +21,18 @@ public class BasketService {
     }
 
     public void addProductToBasket(UUID id) {
-        if (this.storageService.getProductById(id).isPresent()) {
-            this.productBasket.addProduct(id);
-        } else {
-            throw new IllegalArgumentException("Product with ID " + id + " not found.");
-        }
+        // Если продукт не найден, исключение выбросится здесь
+        this.storageService.getProductById(id);
+
+        // Если продукт найден, добавляем его в корзину
+        this.productBasket.addProduct(id);
     }
 
     public List<BasketItem> getUserBasket() {
-        // Получаем все продукты из корзины
-        List<Product> productsInBasket = storageService.getAllProduct().values().stream().toList();
         List<BasketItem> basketItemse = productBasket.getAllProduct()
                 .entrySet()
                 .stream()
-                .map(entry -> new BasketItem(storageService.getProductById(entry.getKey()).orElseThrow(), entry.getValue()))
+                .map(entry -> new BasketItem(storageService.getProductById(entry.getKey()), entry.getValue()))
                 .toList();
         return basketItemse;
     }

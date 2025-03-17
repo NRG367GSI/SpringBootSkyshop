@@ -24,7 +24,7 @@ public class ShopController {
     private final BasketService basketService;
 
     @Autowired
-    public ShopController(SearchService searchService, ProductBasket productBasket, BasketService basketService) {
+    public ShopController(SearchService searchService, BasketService basketService) {
         this.searchService = searchService;
         this.basketService = basketService;
     }
@@ -44,7 +44,7 @@ public class ShopController {
         return searchService.search(pattern);
     }
 
-    @GetMapping("/shop/basket/{id}")
+    @GetMapping("/shop/basket/add/{id}")
     public String addProduct(@PathVariable("id") UUID id) {
         this.basketService.addProductToBasket(id);
         return "Продукт успешно добавлен";

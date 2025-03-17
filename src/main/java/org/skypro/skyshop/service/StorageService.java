@@ -89,11 +89,13 @@ public class StorageService {
         this.article.put(article5.getID(), article5);
     }
 
-    public Optional<Product> getProductById(UUID id) {
-        return Optional.ofNullable(product.get(id));
+    public Product getProductById(UUID id) {
+        Product product = this.product.get(id);
+        if (product == null) {
+            throw new NoSuchProductException("Product not found with id: " + id);
+        }
+        return product;
     }
-
-
 }
 
 
