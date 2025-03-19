@@ -1,12 +1,7 @@
-package org.skypro.skyshop.service;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
+package org.skypro.skyshop.model.exception;
 
 public class ShopError {
-    @JsonProperty("code")
     private final String code;
-
-    @JsonProperty("message")
     private final String message;
 
     public ShopError(String code, String message) {

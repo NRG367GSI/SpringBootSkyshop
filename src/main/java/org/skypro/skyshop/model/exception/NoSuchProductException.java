@@ -1,4 +1,4 @@
-package org.skypro.skyshop.service;
+package org.skypro.skyshop.model.exception;
 
 public class NoSuchProductException extends RuntimeException{
     public NoSuchProductException(String message) {
