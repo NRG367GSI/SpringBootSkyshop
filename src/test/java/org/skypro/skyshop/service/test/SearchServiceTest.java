@@ -1,4 +1,5 @@
 package org.skypro.skyshop.service.test;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
@@ -104,5 +105,12 @@ public class SearchServiceTest {
         assertFalse(result.isEmpty());
         assertEquals(1, result.size());
         assertEquals(product, result.get(0));
+    }
+
+    @Test
+    public void testSearch_NonExistentRequest() {
+        SearchService searchService = new SearchService(storageService);
+        List<Searchable> result = searchService.search("NonExistent");
+        assertTrue(result.isEmpty());
     }
 }
