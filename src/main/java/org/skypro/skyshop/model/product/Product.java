@@ -44,8 +44,7 @@ public abstract class Product implements Searchable {
         return "PRODUCT";
     }
 
-    @Override
-    public UUID getID() {
+    public UUID getIdProduct() {
         return id;
     }
 

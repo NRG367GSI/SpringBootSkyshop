@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -40,13 +41,13 @@ public class StorageService {
         Product tomato = new DiscountedProduct(UUID.randomUUID(), "Tomato", 40, 10);
         Product potato = new SimpleProduct(UUID.randomUUID(), "Potato", 30);
 
-        product.put(apple.getID(), apple);
-        product.put(banana.getID(), banana);
-        product.put(milk.getID(), milk);
-        product.put(cheese.getID(), cheese);
-        product.put(yogurt.getID(), yogurt);
-        product.put(tomato.getID(), tomato);
-        product.put(potato.getID(), potato);
+        product.put(apple.getIdProduct(), apple);
+        product.put(banana.getIdProduct(), banana);
+        product.put(milk.getIdProduct(), milk);
+        product.put(cheese.getIdProduct(), cheese);
+        product.put(yogurt.getIdProduct(), yogurt);
+        product.put(tomato.getIdProduct(), tomato);
+        product.put(potato.getIdProduct(), potato);
         System.out.println(product);
 
         // Создаем статьи с описаниями товаров
@@ -87,6 +88,12 @@ public class StorageService {
         this.article.put(article4.getID(), article4);
         this.article.put(article5.getID(), article5);
     }
+
+    public Optional<Product> getProductById(UUID id) {
+        return Optional.ofNullable(product.get(id));
+    }
+
+
 }
 
 

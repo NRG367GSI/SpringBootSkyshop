@@ -25,4 +25,8 @@ public class FixPriceProduct extends Product{
         return true;
     }
 
+    @Override
+    public UUID getID() {
+        return getIdProduct();
+    }
 }
